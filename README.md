@@ -1,10 +1,9 @@
-# Spotbook
+# Spotbook – stabile Netlify-Version
 
-Einfache Terminbuchungsseite für Spotrepair-Lackierungen.
+Diese Version verwendet **keine Dankeseite und keine Weiterleitung**.
 
-## Netlify
-- Build command: leer
-- Publish directory: `.` oder leer
-- Formularname: `spotbook-termin`
+Das Formular wird per JavaScript direkt an Netlify gesendet. Nach erfolgreichem Versand erscheint die Bestätigung direkt unter dem Absende-Button. Dadurch kann kein 404-Fehler durch eine fehlende Dankeseite entstehen.
 
-Die Buchung ist zunächst eine Anfrage. Diese Version verhindert keine Doppelbuchungen.
+## Hochladen
+
+Alle Dateien aus diesem ZIP direkt in die oberste Ebene des GitHub-Repositories hochladen und vorhandene Dateien überschreiben.

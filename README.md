@@ -1,12 +1,10 @@
-# Dent Wizard Terminbuchung – Professional Edition
+# Spotbook
 
-Statische, responsive Netlify-Website mit mehrstufiger Terminanfrage, Foto-Upload und WhatsApp-Kontakt.
+Einfache Terminbuchungsseite für Spotrepair-Lackierungen.
 
-## Veröffentlichung
-Alle Dateien in die oberste Ebene des GitHub-Repositories hochladen. Netlify veröffentlicht automatisch nach dem Commit.
+## Netlify
+- Build command: leer
+- Publish directory: `.` oder leer
+- Formularname: `spotbook-termin`
 
-## Formular
-Netlify erkennt das Formular `terminanfrage` beim Deployment. Einsendungen erscheinen im Netlify-Dashboard unter Forms.
-
-## Wichtig
-Die Seite nimmt Terminanfragen entgegen. Eine Anfrage ist erst nach persönlicher Bestätigung verbindlich. Eine echte Live-Verfügbarkeitsprüfung und automatische Sperrung bereits belegter Termine benötigt in einem weiteren Schritt ein Backend bzw. eine Kalender-Integration.
+Die Buchung ist zunächst eine Anfrage. Diese Version verhindert keine Doppelbuchungen.

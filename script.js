@@ -1,7 +1,7 @@
 (() => {
   const dateInput = document.getElementById("date");
   const hint = document.getElementById("dateHint");
-  const form = document.querySelector('form[name="spotbook-termin"]');
+  const form = document.getElementById("spotbookForm");
   const status = document.getElementById("formStatus");
   const submitButton = form?.querySelector('button[type="submit"]');
 
@@ -12,6 +12,7 @@
 
     dateInput.addEventListener("change", () => {
       if (!dateInput.value) return;
+
       const selected = new Date(`${dateInput.value}T12:00:00`);
       const day = selected.getDay();
 
@@ -47,13 +48,18 @@
     try {
       const formData = new FormData(form);
 
-      const response = await fetch("/", {
+      const response = await fetch(form.action, {
         method: "POST",
-        body: formData
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
+        const data = await response.json().catch(() => ({}));
+        const message = data?.errors?.map(error => error.message).join(" ") || "Formular konnte nicht gesendet werden.";
+        throw new Error(message);
       }
 
       status.textContent = "Vielen Dank! Deine Terminanfrage wurde gesendet. Wir melden uns zur Bestätigung.";
@@ -63,7 +69,7 @@
       status.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (error) {
       console.error(error);
-      status.textContent = "Die Anfrage konnte nicht gesendet werden. Bitte versuche es erneut oder kontaktiere uns per WhatsApp unter 0160 2162777.";
+      status.textContent = "Die Anfrage konnte nicht gesendet werden. Bitte prüfe deine Angaben oder kontaktiere uns per WhatsApp unter 0160 2162777.";
       status.className = "notice error";
       status.hidden = false;
       status.scrollIntoView({ behavior: "smooth", block: "center" });

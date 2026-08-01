@@ -1,9 +1,15 @@
-# Spotbook – stabile Netlify-Version
+# Spotbook – Formspree-Version
 
-Diese Version verwendet **keine Dankeseite und keine Weiterleitung**.
+Diese Version verwendet Formspree statt Netlify Forms.
 
-Das Formular wird per JavaScript direkt an Netlify gesendet. Nach erfolgreichem Versand erscheint die Bestätigung direkt unter dem Absende-Button. Dadurch kann kein 404-Fehler durch eine fehlende Dankeseite entstehen.
+Formular-Endpunkt:
+https://formspree.io/f/xjgnqpyz
 
-## Hochladen
+## Veröffentlichung
 
-Alle Dateien aus diesem ZIP direkt in die oberste Ebene des GitHub-Repositories hochladen und vorhandene Dateien überschreiben.
+1. Alle Dateien aus diesem ZIP direkt in die oberste Ebene des GitHub-Repositories hochladen.
+2. Vorhandene Dateien überschreiben.
+3. Commit speichern.
+4. Warten, bis Netlify den neuen Commit als Published anzeigt.
+
+Nach dem Absenden bleibt der Kunde auf derselben Seite und sieht eine Erfolgsmeldung.
